@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>人口比例柱状图</title>
+    <style type="text/css">
+        div {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mycharts"></div>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript">
+        var mycharts = document.getElementById("mycharts");
+        var oCharts = echarts.init(mycharts);
+        var option = {
+            title: {
+                text: '人口比例'
+            },
+            legend: {
+                data: ['人']
+            },
+            xAxis: {
+                data: ["北京", "上海", "广州", "山西", "江西"]
+            },
+            yAxis: {},
+            series: [{
+                name: '人',
+                type: 'bar',
+                data: [500, 2000, 3600, 1000, 1000]
+            }]
+        };
+        oCharts.setOption(option);
+    </script>
+</body>
+</html>
